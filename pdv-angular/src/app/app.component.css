@@ -1,0 +1,13 @@
+.active{
+    background-color:white;
+    border-color:white ;
+    color:black;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+btn:hover{
+    background-color: white;
+}
+.btn{
+    margin-left:20px;
+}

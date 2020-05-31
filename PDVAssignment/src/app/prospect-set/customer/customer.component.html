@@ -1,0 +1,45 @@
+
+<div  style="width:15%" style="margin-left:1100px; margin-right: 20px;">
+<input type="text" class="form-control" placeholder="search" [(ngModel)]="term" name="term" >  
+</div>
+<br>    
+<div class="container-fluid bg-success">
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th><input type="checkbox"></th>
+        <th>Prospect Name</th>
+        <th>Demographic</th>
+        <th>Source</th>
+        <th>Added By</th>
+        <th>Date Added</th>
+        <th>Set Type</th>
+        <th>How Many</th>
+        <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers  | filter:term | paginate: {itemsPerPage:3, currentPage:p}; " >
+        <td><input type="checkbox"></td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.demographic}}</td>
+        <td>{{customer.source}}</td>
+        <td>{{customer.addedBy}}</td>
+        <td>{{customer.date}}</td>
+        <td>{{customer.set}}</td>
+        <td>{{customer.nums}}</td>
+        <td>{{customer.details}}</td>
+    </tr>
+    </tbody>
+    </table>
+
+    <table class="table table-striped">
+        <tr>
+            <td><b>Add Propspect Set</b></td>
+            <td>Delete Prospect Set</td>
+            <td>Edit Propspect Set</td>            
+            <td><b>Import Propspect Set</b></td>
+        </tr>
+    </table>
+    <pagination-controls (pageChange)="p = $event" class="pull-right"></pagination-controls>   
+    </div>
